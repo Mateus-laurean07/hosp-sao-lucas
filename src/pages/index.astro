@@ -1,0 +1,22 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Hero from "../components/Hero.astro";
+import AboutUs from "../components/AboutUs.astro";
+import SpecialtiesGrid from "../components/SpecialtiesGrid.jsx";
+import Testimonials from "../components/Testimonials.astro";
+import StructureGallery from "../components/StructureGallery.astro";
+import Insurances from "../components/Insurances.astro";
+import DiagnosticCTA from "../components/DiagnosticCTA.astro";
+---
+
+<Layout title="Hospital São Lucas | Referência em Saúde">
+	<main>
+		<Hero />
+		<AboutUs />
+		<SpecialtiesGrid client:load />
+		<Testimonials />
+		<StructureGallery />
+		<Insurances />
+		<DiagnosticCTA />
+	</main>
+</Layout>

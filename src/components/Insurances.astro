@@ -1,0 +1,113 @@
+---
+const insurances = [
+    {
+        src: "https://centrodediagnostico.com.br/wp-content/uploads/2025/03/Cuidar-Bem-card-e1741875003442.webp",
+        alt: "Cuidar Bem",
+    },
+    {
+        src: "https://centrodediagnostico.com.br/wp-content/uploads/2025/03/Prancheta-4-e1741873932384.webp",
+        alt: "Parceiro 1",
+    },
+    {
+        src: "https://centrodediagnostico.com.br/wp-content/uploads/2025/03/Prancheta-12-e1741874024267.webp",
+        alt: "Parceiro 2",
+    },
+    {
+        src: "https://centrodediagnostico.com.br/wp-content/uploads/2025/04/saude-caixa-logo.png",
+        alt: "Saúde Caixa",
+    },
+    {
+        src: "https://centrodediagnostico.com.br/wp-content/uploads/2025/03/Prancheta-11-e1741874087914.webp",
+        alt: "Parceiro 3",
+    },
+    {
+        src: "https://centrodediagnostico.com.br/wp-content/uploads/2025/03/Prancheta-3-e1741874101532.webp",
+        alt: "Parceiro 4",
+    },
+    {
+        src: "https://centrodediagnostico.com.br/wp-content/uploads/2025/03/Prancheta-1-e1741874119357.webp",
+        alt: "Parceiro 5",
+    },
+    {
+        src: "https://centrodediagnostico.com.br/wp-content/uploads/2025/03/Prancheta-2-e1741874135542.webp",
+        alt: "Parceiro 6",
+    },
+    {
+        src: "https://centrodediagnostico.com.br/wp-content/uploads/2025/03/Prancheta-7-e1741874151856.webp",
+        alt: "Parceiro 7",
+    },
+    {
+        src: "https://centrodediagnostico.com.br/wp-content/uploads/2025/03/Prancheta-5-e1741874170336.webp",
+        alt: "Parceiro 8",
+    },
+    {
+        src: "https://centrodediagnostico.com.br/wp-content/uploads/2025/03/Prancheta-9-e1741873976736.webp",
+        alt: "Parceiro 9",
+    },
+    {
+        src: "https://centrodediagnostico.com.br/wp-content/uploads/2025/03/Prancheta-6-e1741874001759.webp",
+        alt: "Parceiro 10",
+    },
+    {
+        src: "https://centrodediagnostico.com.br/wp-content/uploads/2025/04/ipesaude.png",
+        alt: "IPE Saúde",
+    },
+    {
+        src: "https://centrodediagnostico.com.br/wp-content/uploads/2025/04/viamed.png",
+        alt: "Viamed",
+    },
+];
+
+// Duplicar a lista para o efeito de scroll infinito mais suave (marquee)
+const duplicatedInsurances = [...insurances, ...insurances];
+---
+
+<section class="py-16 bg-white border-y border-gray-100 overflow-hidden">
+    <div class="container mx-auto px-6 md:px-12 mb-8 text-center">
+        <h3 class="text-2xl font-bold text-medical-dark font-heading">
+            Convênios Atendidos
+        </h3>
+    </div>
+
+    {/* Infinite Scroll Container */}
+    <div class="relative w-full flex overflow-x-hidden group">
+        {/* Fade edges */}
+        <div
+            class="absolute left-0 top-0 bottom-0 w-24 bg-gradient-to-r from-white to-transparent z-10"
+        >
+        </div>
+        <div
+            class="absolute right-0 top-0 bottom-0 w-24 bg-gradient-to-l from-white to-transparent z-10"
+        >
+        </div>
+
+        {/* Track */}
+        <div
+            class="flex items-center gap-8 md:gap-16 w-max animate-[carousel_40s_linear_infinite] hover:[animation-play-state:paused] py-4"
+        >
+            {
+                duplicatedInsurances.map((insurance) => (
+                    <div class="flex-none w-32 md:w-48 h-20 flex items-center justify-center grayscale hover:grayscale-0 transition-all opacity-70 hover:opacity-100 cursor-pointer">
+                        <img
+                            src={insurance.src}
+                            alt={insurance.alt}
+                            class="max-w-full max-h-full object-contain"
+                            loading="lazy"
+                        />
+                    </div>
+                ))
+            }
+        </div>
+    </div>
+</section>
+
+<style is:global>
+    @keyframes carousel {
+        0% {
+            transform: translateX(0);
+        }
+        100% {
+            transform: translateX(-50%);
+        }
+    }
+</style>

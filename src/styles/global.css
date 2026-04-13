@@ -1,0 +1,27 @@
+@import "tailwindcss";
+
+@theme {
+  --color-medical-blue: #0b5bbb;
+  --color-medical-dark: #073a78;
+  --color-medical-light: #e6f0fa;
+  --color-medical-accent: #00b4d8;
+  --color-surface-gray: #f8fafc;
+  
+  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --font-heading: 'Outfit', 'Inter', sans-serif;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    font-family: var(--font-sans);
+  }
+
+  body {
+    @apply bg-white text-slate-800 antialiased;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+  }
+}

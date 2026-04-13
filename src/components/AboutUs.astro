@@ -1,0 +1,157 @@
+---
+import { Heart, ShieldCheck, Activity, Users, Clock } from "lucide-react";
+
+const benefits = [
+    "Mais de 10 Especialidades Médicas",
+    "Alta na Mesma Noite (Até 12h)",
+    "Procedimentos Altamente Seguros",
+    "Protocolos Rígidos de Segurança",
+    "Time Altamente Especializado",
+    "Equipamentos de Última Geração",
+];
+
+const stats = [
+    { value: "10+", label: "Especialidades" },
+    { value: "24h", label: "Acompanhamento" },
+    { value: "12h", label: "Tempo Máx. Internação" },
+    { value: "100%", label: "Foco no Paciente" },
+];
+---
+
+<section class="py-24 bg-white relative overflow-hidden" id="sobre">
+    <div class="container mx-auto px-6 md:px-12 relative z-10">
+        <div class="flex flex-col lg:flex-row items-center gap-16 lg:gap-24">
+            {/* Left side: Images and Badge */}
+            <div class="w-full lg:w-1/2 relative">
+                <div class="relative z-10 w-4/5 ml-auto">
+                    {/* Doctor image on blue background shape */}
+                    <div
+                        class="bg-medical-blue rounded-3xl rounded-br-[100px] aspect-[4/5] relative overflow-visible"
+                    >
+                        <img
+                            src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?q=80&w=2070&auto=format&fit=crop"
+                            alt="Equipe Médica"
+                            class="absolute -bottom-0 -left-16 w-[120%] h-[110%] object-cover object-top drop-shadow-2xl translate-y-8 lg:translate-y-12"
+                            style="-webkit-mask-image: linear-gradient(to top, black 80%, transparent 100%);"
+                        />
+                    </div>
+                </div>
+
+                {/* Badge ISO */}
+                <div
+                    class="absolute top-10 left-0 bg-white p-4 rounded-xl shadow-xl flex items-center gap-3 z-20 border border-gray-100 max-w-[240px]"
+                >
+                    <div class="text-medical-blue">
+                        <svg
+                            viewBox="0 0 24 24"
+                            width="48"
+                            height="48"
+                            stroke="currentColor"
+                            stroke-width="2"
+                            fill="none"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            ><path
+                                d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"
+                            ></path><path d="m9 12 2 2 4-4"></path></svg
+                        >
+                    </div>
+                    <div>
+                        <div
+                            class="text-xs text-medical-blue font-bold uppercase tracking-wider"
+                        >
+                            Foco e Cuidado
+                        </div>
+                        <div
+                            class="text-sm font-bold text-medical-dark leading-tight"
+                        >
+                            Recuperação Ágil e Segura
+                        </div>
+                    </div>
+                </div>
+
+                {/* Text bottom left */}
+                <div
+                    class="absolute bottom-10 -left-4 md:-left-12 bg-white/90 backdrop-blur-sm p-6 rounded-xl shadow-lg z-20 max-w-[280px]"
+                >
+                    <div class="flex items-baseline gap-2 mb-1">
+                        <span
+                            class="text-4xl font-bold font-heading text-medical-dark"
+                            >12h</span
+                        >
+                        <span
+                            class="text-sm font-bold text-medical-blue leading-tight"
+                            >Tempo Médio<br />de Internação</span
+                        >
+                    </div>
+                    <p class="text-xs text-slate-500 mt-2">
+                        Opere com a excelência do São Lucas e recupere-se no
+                        conforto da sua casa.
+                    </p>
+                </div>
+            </div>
+
+            {/* Right side: Content */}
+            <div class="w-full lg:w-1/2 mt-16 lg:mt-0">
+                <div
+                    class="inline-block border border-medical-blue/20 text-medical-blue font-bold px-4 py-1.5 rounded-full text-sm mb-6 bg-medical-light/50"
+                >
+                    A História do São Lucas
+                </div>
+
+                <h2
+                    class="text-4xl md:text-5xl font-bold text-medical-dark font-heading leading-[1.1] mb-6"
+                >
+                    O Primeiro Hospital Dia <br />
+                    <span class="text-medical-blue relative inline-block">
+                        Integrado da Região
+                    </span>
+                </h2>
+
+                <div
+                    class="space-y-6 text-slate-600 leading-relaxed text-lg mb-10"
+                >
+                    <p>
+                        Nascido da experiência do Centro de Diagnóstico, o
+                        Hospital Dia do São Lucas representa um novo conceito em
+                        cirurgia. Eliminamos o clima tenso e o risco das longas
+                        internações hospitalares.
+                    </p>
+                    <p>
+                        Nosso modelo é focado em alta previsibilidade: você
+                        chega, realiza o procedimento cirúrgico com uma equipe
+                        de ponta em um centro de excelência e, na mesma noite,
+                        já está dormindo na segurança da sua casa — com muito
+                        mais conforto e segurança para sua recuperação.
+                    </p>
+                </div>
+
+                <ul class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-10">
+                    {
+                        benefits.map((benefit) => (
+                            <li class="flex items-center gap-3 text-medical-dark font-medium cursor-pointer group">
+                                <div class="flex-shrink-0 text-medical-blue group-hover:scale-110 transition-transform">
+                                    <ShieldCheck size={20} />
+                                </div>
+                                <span class="group-hover:text-medical-blue transition-colors text-sm">
+                                    {benefit}
+                                </span>
+                            </li>
+                        ))
+                    }
+                </ul>
+
+                <a
+                    href="#especialidades"
+                    class="inline-flex items-center gap-2 bg-medical-blue hover:bg-medical-dark text-white px-8 py-4 rounded-md font-bold transition-all text-center flex-shrink-0 shadow-lg shadow-medical-blue/20 group"
+                >
+                    Saiba Mais
+                    <span
+                        class="text-xl leading-none group-hover:translate-x-1 transition-transform"
+                        >+</span
+                    >
+                </a>
+            </div>
+        </div>
+    </div>
+</section>

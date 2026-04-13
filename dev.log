@@ -1,0 +1,16 @@
+
+> receptive-radiation@0.0.1 dev
+> astro dev
+
+13:33:30 [types] Generated 0ms
+13:33:30 [content] Syncing content
+13:33:30 [content] Synced content
+13:33:30 [vite] Re-optimizing dependencies because vite config has changed
+13:33:30 [vite] Port 4321 is in use, trying another one...
+
+ astro  v5.18.0 ready in 137 ms
+
+┃ Local    http://localhost:4322/
+┃ Network  use --host to expose
+
+13:33:30 watching for file changes...

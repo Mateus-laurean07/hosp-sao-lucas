@@ -1,0 +1,24 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import DoctorAdmin from "../../components/DoctorAdmin.tsx";
+---
+
+<Layout title="Administração - Hosp São Lucas">
+  <main class="w-full min-h-screen bg-surface-gray">
+    <div id="admin-content" style="display: none;">
+      <DoctorAdmin client:load />
+    </div>
+  </main>
+</Layout>
+
+<script>
+  // Proteção de rota no lado do cliente
+  const session = sessionStorage.getItem('hosp_admin_session');
+  if (session !== 'active') {
+    window.location.href = '/admin';
+  } else {
+    // Se estiver logado, mostra o conteúdo
+    const content = document.getElementById('admin-content');
+    if (content) content.style.display = 'block';
+  }
+</script>

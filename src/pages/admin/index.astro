@@ -1,0 +1,118 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import { StethoscopeOutline } from 'healthicons-react';
+---
+
+<Layout title="Login Administrativo - Hospital São Lucas">
+  <main class="min-h-screen bg-[#f3f7fb] flex items-center justify-center p-4 font-sans">
+    <div 
+        id="login-card"
+        class="bg-white w-full max-w-5xl rounded-[2.5rem] shadow-2xl overflow-hidden flex flex-col md:flex-row min-h-[600px] opacity-0 transition-all duration-500 transform translate-y-4"
+    >
+        {/* Lado Esquerdo - Boas vindas */}
+        <div class="w-full md:w-1/2 p-12 md:p-16 flex flex-col justify-center bg-white">
+            <div class="flex items-center gap-3 mb-10">
+                <div class="w-16 h-16 bg-[#0b5bbb] rounded-2xl flex items-center justify-center shadow-lg shadow-blue-500/20">
+                    <StethoscopeOutline className="w-10 h-10 text-white fill-current" />
+                </div>
+                <div>
+                    <h1 class="text-2xl font-black text-[#073a78] leading-none">Hospital</h1>
+                    <h1 class="text-3xl font-black text-[#0b5bbb] leading-tight">São Lucas</h1>
+                </div>
+            </div>
+
+            <h2 class="text-4xl md:text-5xl font-black text-[#073a78] mb-6 leading-tight tracking-tight">
+                Bem-vindo ao<br />Hospital São Lucas!
+            </h2>
+            <p class="text-slate-500 text-lg leading-relaxed font-medium max-w-sm">
+                Por favor, faça login para acessar sua área reservada. Se precisar de ajuda, entre em contato com a equipe de suporte.
+            </p>
+        </div>
+
+        {/* Lado Direito - Formulário */}
+        <div class="w-full md:w-1/2 bg-[#e8f1f9] p-8 md:p-16 flex flex-col justify-center items-center">
+            <div class="w-full max-w-sm bg-white rounded-[2rem] p-8 md:p-10 shadow-xl relative">
+                <h3 class="text-3xl font-black text-[#073a78] mb-8">Login</h3>
+                
+                <form id="login-form" class="space-y-6">
+                    <div class="space-y-2">
+                        <label class="flex items-center gap-2 text-[11px] font-black uppercase text-slate-400 tracking-wider ml-1">
+                            SEU E-MAIL
+                        </label>
+                        <input 
+                            type="email" 
+                            id="email"
+                            required
+                            class="w-full p-4 bg-slate-50 border-2 border-slate-100 rounded-2xl focus:border-[#0b5bbb] focus:bg-white outline-none transition-all font-bold text-slate-700"
+                            placeholder="Digite seu e-mail"
+                        />
+                    </div>
+
+                    <div class="space-y-2">
+                        <label class="flex items-center gap-2 text-[11px] font-black uppercase text-slate-400 tracking-wider ml-1">
+                            SUA SENHA
+                        </label>
+                        <input 
+                            type="password" 
+                            id="password"
+                            required
+                            class="w-full p-4 bg-slate-50 border-2 border-slate-100 rounded-2xl focus:border-[#0b5bbb] focus:bg-white outline-none transition-all font-bold text-slate-700"
+                            placeholder="Digite sua senha"
+                        />
+                    </div>
+
+                    <div class="text-right hidden">
+                        <button type="button" class="text-xs font-bold text-[#0b5bbb] hover:underline">Esqueceu sua senha?</button>
+                    </div>
+
+                    <div id="error-message" class="hidden bg-red-50 text-red-500 p-4 rounded-xl text-xs font-bold text-center border border-red-100">
+                        Credenciais incorretas. Tente novamente.
+                    </div>
+
+                    <button 
+                        type="submit" 
+                        class="w-full py-5 bg-[#2b6fcb] text-white font-black rounded-2xl shadow-xl shadow-blue-500/20 hover:bg-[#073a78] transition-all uppercase tracking-[0.15em] text-sm active:scale-[0.98]"
+                    >
+                        Entrar
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+  </main>
+
+  <script>
+    const loginCard = document.getElementById('login-card');
+    const loginForm = document.getElementById('login-form');
+    const emailInput = document.getElementById('email') as HTMLInputElement;
+    const passwordInput = document.getElementById('password') as HTMLInputElement;
+    const errorMessage = document.getElementById('error-message');
+
+    // Fade in effect
+    setTimeout(() => {
+        loginCard?.classList.remove('opacity-0', 'translate-y-4');
+    }, 100);
+
+    loginForm?.addEventListener('submit', (e) => {
+        e.preventDefault();
+        
+        const email = emailInput.value;
+        const password = passwordInput.value;
+
+        // Tenta pegar o usuário cadastrado no registro
+        const savedAdmin = localStorage.getItem('hosp_admin_user');
+        const adminData = savedAdmin ? JSON.parse(savedAdmin) : null;
+
+        // Validação: apenas o usuário que se registrou
+        const isValidRegistered = adminData && email === adminData.email && password === adminData.password;
+
+        if (isValidRegistered) {
+            sessionStorage.setItem('hosp_admin_session', 'active');
+            window.location.href = '/admin/medicos';
+        } else {
+            errorMessage?.classList.remove('hidden');
+            setTimeout(() => errorMessage?.classList.add('hidden'), 3000);
+        }
+    });
+  </script>
+</Layout>
