@@ -4,10 +4,10 @@ import Layout from "../../layouts/Layout.astro";
 import DoctorAdmin from "../../components/DoctorAdmin.tsx";
 
 // Proteção de rota no lado do servidor
-const session = Astro.cookies.get('hosp_admin_session');
+const session = Astro.cookies.get("hosp_admin_session");
 
-if (!session || session.value !== 'active') {
-  return Astro.redirect('/admin');
+if (!session || session.value !== "active") {
+  return Astro.redirect("/admin");
 }
 ---
 
