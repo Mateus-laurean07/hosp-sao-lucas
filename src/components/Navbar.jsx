@@ -36,7 +36,7 @@ const Navbar = () => {
     ];
 
     return (
-        <header className="relative w-full z-50 flex flex-col">
+        <header className="relative w-full z-30 flex flex-col">
             {/* Top Bar - Classic Medical Theme Feature */}
             <div className="hidden md:flex bg-slate-100 text-slate-600 py-2 border-b border-gray-200 text-xs font-medium">
                 <div className="max-w-[1600px] mx-auto w-full px-4 md:px-6 flex justify-between items-center">
@@ -82,7 +82,7 @@ const Navbar = () => {
                     {/* Logo */}
                     <a href="/" className="flex items-center gap-2">
                         <img
-                            src="/images/Logo Sao Lucas Horizontal Azul.png"
+                            src="/images/logo-h-azul.png"
                             alt="Hospital São Lucas Logo"
                             className="h-10 md:h-12 w-auto object-contain"
                         />
