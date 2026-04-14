@@ -1,5 +1,9 @@
 import { neon } from '@neondatabase/serverless';
 
-const sql = neon(import.meta.env.DATABASE_URL);
+export function getDb() {
+  const url = import.meta.env.DATABASE_URL;
+  if (!url) throw new Error('DATABASE_URL não está configurada.');
+  return neon(url);
+}
 
-export default sql;
+export default getDb;

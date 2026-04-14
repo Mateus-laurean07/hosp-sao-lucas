@@ -2,7 +2,7 @@
 export const prerender = false;
 import Layout from "../../layouts/Layout.astro";
 import { StethoscopeOutline } from "healthicons-react";
-import sql from "../../lib/db";
+import { getDb } from "../../lib/db";
 
 let loginError = false;
 
@@ -19,6 +19,7 @@ if (Astro.request.method === "POST") {
       isAuthenticated = true;
     } else {
       // 2. Verificar no Banco de Dados Neon
+      const sql = getDb();
       const users = await sql`
                 SELECT * FROM administrators 
                 WHERE email = ${email} AND password = ${password}
