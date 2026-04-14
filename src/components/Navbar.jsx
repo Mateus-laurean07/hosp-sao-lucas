@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from 'react';
+import logoAzul from '../assets/images/logo-h-azul.png';
+import logoBranco from '../assets/images/logo-h-branco.png';
 import { Menu, X, Phone, Mail, Clock, MapPin, FileText } from 'lucide-react';
 import { FaWhatsapp } from 'react-icons/fa';
 import { motion, AnimatePresence } from 'framer-motion';
@@ -82,7 +84,7 @@ const Navbar = () => {
                     {/* Logo */}
                     <a href="/" className="flex items-center gap-2">
                         <img
-                            src="/images/logo-h-azul.png"
+                            src={logoAzul.src}
                             alt="Hospital São Lucas Logo"
                             className="h-10 md:h-12 w-auto object-contain"
                         />
