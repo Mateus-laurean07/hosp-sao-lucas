@@ -8,6 +8,7 @@ export default defineConfig({
   output: "server",
   adapter: cloudflare(),
   integrations: [react()],
+  compatibilityDate: "2024-04-03",
   devToolbar: { enabled: false },
   vite: {
     plugins: [tailwindcss()],

@@ -1,5 +1,6 @@
 ---
 import { Phone, Mail, MapPin, Clock, Instagram, Facebook } from "lucide-react";
+import logoNaveo from "../assets/images/logo-naveo-branco.png";
 ---
 
 <footer class="bg-medical-dark text-medical-light pt-20 pb-10">
@@ -173,12 +174,16 @@ import { Phone, Mail, MapPin, Clock, Instagram, Facebook } from "lucide-react";
             &copy; {new Date().getFullYear()} Hospital São Lucas. Todos os direitos
             reservados. | <a href="/politica-de-privacidade" class="hover:text-white underline-offset-4 hover:underline">Política de Privacidade</a> | <a href="/ouvidoria" class="hover:text-white underline-offset-4 hover:underline">Ouvidoria</a>
         </p>
-        <p>
-            Desenvolvido por <a
-                href="#"
-                class="text-white hover:text-medical-accent font-medium transition-colors"
-                >Naveo</a
+        <div class="flex items-center gap-3">
+            <span class="text-xs uppercase tracking-widest opacity-60">Desenvolvido por</span>
+            <a
+                href="https://naveo.com.br/"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="transition-all hover:scale-110"
             >
-        </p>
+                <img src={logoNaveo.src} alt="Naveo" class="h-8 w-auto opacity-90 hover:opacity-100 transition-opacity" />
+            </a>
+        </div>
     </div>
 </footer>

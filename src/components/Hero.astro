@@ -1,16 +1,17 @@
 ---
 import { ArrowRight } from "lucide-react";
+import facadeImg from "../assets/images/Hospital_Inauguracao-6.jpg";
 ---
 
 <section class="relative pt-4 pb-12 px-4 md:px-6 bg-surface-gray">
     <div
         class="max-w-[1600px] mx-auto relative rounded-[32px] overflow-hidden min-h-[600px] md:min-h-[800px] flex items-center shadow-lg bg-medical-dark"
     >
-        {/* Background Image */}
+        <!-- Background Image -->
         <div class="absolute inset-0 z-0">
             <img
-                src="/images/medzin-hero-doctor.png"
-                alt="Médica empática conversando com paciente"
+                src={facadeImg.src}
+                alt="Fachada do Hospital São Lucas - Marau"
                 class="w-full h-full object-cover object-center opacity-80 mix-blend-overlay"
             />
             <div

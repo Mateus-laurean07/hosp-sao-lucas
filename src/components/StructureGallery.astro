@@ -1,48 +1,70 @@
 ---
 import { Camera } from "lucide-react";
+import infusionImg from "../assets/images/IMG_4243.JPG";
+import receptionImg from "../assets/images/IMG_4201.JPG";
+import surgeryNewImg from "../assets/images/IMG_4341.JPG";
+import suiteImg from "../assets/images/IMG_4280.JPG";
+import techImg from "../assets/images/IMG_4287.JPG";
+import socialImg from "../assets/images/IMG_4213.JPG";
+import sterileImg from "../assets/images/IMG_4311.JPG";
+import comfortImg from "../assets/images/IMG_4301.JPG";
 
-// Placeholder images for now, the user can replace them later or provide specific ones.
-// I'll provide a nice grid layout for ~8 images.
 const structureImages = [
     {
-        url: "https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?q=80&w=2653&auto=format&fit=crop",
-        alt: "Fachada do Hospital",
-        className: "md:col-span-2 md:row-span-2", // Large feature image
+        url: receptionImg.src,
+        alt: "Recepção e Acolhimento",
+        className: "md:col-span-2 md:row-span-2",
+        title: "Recepção",
+        description: "Ambiente moderno e acolhedor para o seu primeiro contato",
     },
     {
-        url: "https://images.unsplash.com/photo-1516549655169-df83a0774514?q=80&w=2670&auto=format&fit=crop",
-        alt: "Recepção Moderna",
+        url: surgeryNewImg.src,
+        alt: "Centro Cirúrgico Avançado",
         className: "md:col-span-1 md:row-span-1",
+        title: "Tecnologia",
+        description: "Equipamentos de última geração para sua segurança",
     },
     {
-        url: "https://images.unsplash.com/photo-1551076805-e1869033e561?q=80&w=2670&auto=format&fit=crop",
-        alt: "Quarto de Internação",
+        url: sterileImg.src,
+        alt: "Área de Esterilização",
         className: "md:col-span-1 md:row-span-1",
+        title: "Biossegurança",
+        description: "Rígidos protocolos de esterilização e segurança",
     },
     {
-        url: "https://images.unsplash.com/photo-1512678080530-7760d81faba6?q=80&w=2674&auto=format&fit=crop",
-        alt: "Lobby de Espera",
-        className: "md:col-span-2 md:row-span-1", // Wide image
+        url: suiteImg.src,
+        alt: "Suíte de Recuperação",
+        className: "md:col-span-2 md:row-span-1",
+        title: "Hospital Dia",
+        description: "Recuperação com o conforto e privacidade de uma suíte",
     },
     {
-        url: "https://images.unsplash.com/photo-1504813184591-01572f98c85f?q=80&w=2671&auto=format&fit=crop",
-        alt: "Centro Cirúrgico",
+        url: techImg.src,
+        alt: "Equipamento Médico",
         className: "md:col-span-1 md:row-span-1",
+        title: "Inovação",
+        description: "Sistemas avançados de monitoramento",
     },
     {
-        url: "https://images.unsplash.com/photo-1579684385127-1ef15d508118?q=80&w=2000&auto=format&fit=crop",
-        alt: "Consultório de Atendimento",
+        url: socialImg.src,
+        alt: "Área de Convivência",
         className: "md:col-span-1 md:row-span-1",
+        title: "Humanização",
+        description: "Espaços pensados para o bem-estar de pacientes e familiares",
     },
     {
-        url: "https://images.unsplash.com/photo-1586773860418-d37222d8fce3?q=80&w=2673&auto=format&fit=crop",
-        alt: "Equipamentos de Diagnóstico",
+        url: infusionImg.src,
+        alt: "Sala de Infusão e Conforto",
         className: "md:col-span-1 md:row-span-1",
+        title: "Ambiente",
+        description: "Espaços projetados para o seu máximo conforto",
     },
     {
-        url: "https://images.unsplash.com/photo-1638202993928-7267aad84c31?q=80&w=2574&auto=format&fit=crop",
-        alt: "Área Externa",
+        url: comfortImg.src,
+        alt: "Quarto com Varanda",
         className: "md:col-span-1 md:row-span-1",
+        title: "Conforto",
+        description: "Ambientes amplos e climatizados com vista externa",
     },
 ];
 ---
@@ -51,7 +73,7 @@ const structureImages = [
     class="py-20 md:py-32 bg-white relative overflow-hidden"
     id="estrutura"
 >
-    {/* Decorative background blur element */}
+    <!-- Decorative background blur element -->
     <div
         class="absolute -top-[10%] -right-[10%] w-[40%] h-[40%] rounded-full bg-medical-blue/5 blur-[120px] pointer-events-none"
     >
@@ -92,7 +114,7 @@ const structureImages = [
             </p>
         </div>
 
-        {/* Bento Grid Gallery */}
+        <!-- Bento Grid Gallery -->
         <div
             class="grid grid-cols-1 md:grid-cols-4 auto-rows-[200px] md:auto-rows-[250px] gap-4 md:gap-6"
         >
@@ -109,11 +131,14 @@ const structureImages = [
                             loading="lazy"
                         />
 
-                        {/* Hover Caption Overlay */}
-                        <div class="absolute inset-0 bg-gradient-to-t from-medical-dark/80 via-medical-dark/20 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-300 z-20 flex items-end p-6 pointer-events-none">
-                            <span class="text-white font-bold font-heading text-lg translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
-                                {image.alt}
-                            </span>
+                        <!-- Hover Caption Overlay -->
+                        <div class="absolute inset-0 bg-gradient-to-t from-medical-dark/90 via-medical-dark/40 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-500 z-20 flex flex-col justify-end p-8 pointer-events-none">
+                            <h4 class="text-white font-bold font-heading text-xl translate-y-4 group-hover:translate-y-0 transition-transform duration-300 mb-2">
+                                {image.title}
+                            </h4>
+                            <p class="text-white/80 text-sm translate-y-4 group-hover:translate-y-0 transition-transform duration-500 delay-75">
+                                {image.description}
+                            </p>
                         </div>
                     </div>
                 ))

@@ -15,6 +15,7 @@ import {
   Instagram,
   Camera,
   AlertCircle,
+  LogOut,
 } from "lucide-react";
 import {
   SyringeOutline,
@@ -310,7 +311,7 @@ export default function DoctorAdmin() {
         {/* 1. GRID DE ESPECIALIDADES */}
         {!selectedSpecialty && (
           <div className="animate-in fade-in duration-500">
-            <div className="flex items-center justify-between mb-12">
+            <div className="flex flex-col md:flex-row items-start md:items-center justify-between mb-12 gap-6">
               <div className="text-left">
                 <h2 className="text-3xl md:text-5xl font-bold text-[#073a78] mb-4 font-heading leading-tight">
                   Painel Administrativo
@@ -319,6 +320,13 @@ export default function DoctorAdmin() {
                   Controle de profissionais do Hospital São Lucas.
                 </p>
               </div>
+              <button
+                onClick={handleLogout}
+                className="flex items-center gap-2 px-6 py-3 bg-white text-red-500 border-2 border-red-50 rounded-2xl font-black hover:bg-red-500 hover:text-white hover:border-red-500 transition-all shadow-sm active:scale-95 uppercase tracking-widest text-xs"
+              >
+                <LogOut size={18} />
+                Sair do Painel
+              </button>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
               {specialtiesData.map((spec) => (
