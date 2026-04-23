@@ -1,6 +1,6 @@
 ---
 // components/DiagnosticCTA.astro
-import parceriaAlbert from "../assets/parceria_albert.webp";
+import cdLogo from "../assets/cd-logo.png";
 ---
 
 <section class="w-full bg-white relative py-12 md:py-24">
@@ -9,12 +9,12 @@ import parceriaAlbert from "../assets/parceria_albert.webp";
     >
         <!-- Right Side Image (Background element underneath the blue shape on desktop) -->
         <div
-            class="md:absolute right-0 top-0 w-full md:w-[60%] lg:w-[55%] h-[350px] md:h-full z-0 order-2 md:order-1"
+            class="md:absolute right-0 top-0 w-full md:w-[45%] lg:w-[40%] h-[350px] md:h-full z-0 order-2 md:order-1 flex items-center justify-center p-8 lg:p-12 xl:p-16 bg-white"
         >
             <img
-                src={parceriaAlbert.src}
-                alt="Centro de Diagnóstico Parceria"
-                class="w-full h-full object-cover object-[center_30%]"
+                src={cdLogo.src}
+                alt="Centro de Diagnóstico"
+                class="w-full max-w-md h-auto object-contain drop-shadow-sm"
             />
         </div>
 

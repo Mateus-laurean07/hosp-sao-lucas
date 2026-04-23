@@ -1,10 +1,10 @@
 ---
 import { ShieldCheck } from "lucide-react";
-import doctorImg from "../assets/images/doctor_real_v2.png";
+import internalImg from "../assets/images/IMG_4215.JPG";
 
 const benefits = [
   "Mais de 10 Especialidades Médicas",
-  "Alta na Mesma Noite (Até 12h)",
+  "Atendimento Humanizado",
   "Procedimentos Altamente Seguros",
   "Protocolos Rígidos de Segurança",
   "Time Altamente Especializado",
@@ -18,15 +18,14 @@ const benefits = [
       <!-- Left side: Images and Badge -->
       <div class="w-full lg:w-1/2 relative">
         <div class="relative z-10 w-4/5 ml-auto">
-          <!-- Doctor image on blue background shape -->
+          <!-- Image -->
           <div
-            class="bg-medical-blue rounded-3xl rounded-br-[100px] aspect-[4/5] relative overflow-visible"
+            class="rounded-3xl rounded-br-[100px] aspect-[4/5] relative overflow-hidden shadow-2xl"
           >
             <img
-              src={doctorImg.src}
-              alt="Hospital São Lucas - Tecnologia e Humanização"
-              class="absolute -bottom-0 -left-16 w-[120%] h-[110%] object-cover object-top drop-shadow-2xl translate-y-8 lg:translate-y-12"
-              style="-webkit-mask-image: linear-gradient(to top, black 80%, transparent 100%);"
+              src={internalImg.src}
+              alt="Hospital São Lucas - Infraestrutura"
+              class="absolute inset-0 w-full h-full object-cover"
             />
           </div>
         </div>
@@ -65,17 +64,16 @@ const benefits = [
         <div
           class="absolute bottom-10 -left-4 md:-left-12 bg-white/90 backdrop-blur-sm p-6 rounded-xl shadow-lg z-20 max-w-[280px]"
         >
-          <div class="flex items-baseline gap-2 mb-1">
-            <span class="text-4xl font-bold font-heading text-medical-dark"
-              >12h</span
-            >
-            <span class="text-sm font-bold text-medical-blue leading-tight"
-              >Tempo Médio<br />de Internação</span
+          <div class="flex items-center gap-4 mb-2">
+            <div class="w-12 h-12 bg-medical-blue/10 rounded-full flex items-center justify-center text-medical-blue">
+              <ShieldCheck size={24} />
+            </div>
+            <span class="text-sm font-bold text-medical-dark leading-tight"
+              >Cuidado<br />Humanizado</span
             >
           </div>
-          <p class="text-xs text-slate-500 mt-2">
-            Opere com a excelência do São Lucas e recupere-se no conforto da sua
-            casa.
+          <p class="text-xs text-slate-500">
+            Acolhimento e excelência médica para o seu bem-estar completo.
           </p>
         </div>
       </div>
@@ -91,23 +89,22 @@ const benefits = [
         <h2
           class="text-4xl md:text-5xl font-bold text-medical-dark font-heading leading-[1.1] mb-6"
         >
-          O Primeiro Hospital Dia <br />
+          Tradição e Excelência <br />
           <span class="text-medical-blue relative inline-block">
-            Integrado da Região
+            Em Cuidado Médico
           </span>
         </h2>
 
         <div class="space-y-6 text-slate-600 leading-relaxed text-lg mb-10">
           <p>
-            Nascido da experiência do Centro de Diagnóstico, o Hospital Dia do
-            São Lucas representa um novo conceito em cirurgia. Eliminamos o
-            clima tenso e o risco das longas internações hospitalares.
+            O Hospital São Lucas representa um conceito sólido de excelência em saúde. 
+            Oferecemos um ambiente acolhedor e infraestrutura completa, totalmente focado 
+            no bem-estar e na recuperação plena dos nossos pacientes.
           </p>
           <p>
-            Nosso modelo é focado em alta previsibilidade: você chega, realiza o
-            procedimento cirúrgico com uma equipe de ponta em um centro de
-            excelência e, na mesma noite, já está dormindo na segurança da sua
-            casa — com muito mais conforto e segurança para sua recuperação.
+            Nosso modelo é baseado na alta qualidade e segurança assistencial. 
+            Contamos com um corpo clínico de excelência e tecnologia de ponta para 
+            garantir o melhor atendimento, com conforto e confiança para você e sua família.
           </p>
         </div>
 
