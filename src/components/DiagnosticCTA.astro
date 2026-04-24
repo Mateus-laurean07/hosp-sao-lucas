@@ -3,65 +3,54 @@
 import cdLogo from "../assets/cd-logo.png";
 ---
 
-<section class="w-full bg-white relative py-12 md:py-24">
+<section class="w-full bg-slate-50/50 relative py-12 md:py-24 overflow-hidden">
+    <!-- Fluid background elements -->
+    <div class="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
+        <div class="absolute -top-[10%] -left-[10%] w-[40%] h-[40%] rounded-full bg-[#00a3e0]/5 blur-[120px] animate-pulse"></div>
+        <div class="absolute -bottom-[10%] -right-[10%] w-[40%] h-[40%] rounded-full bg-[#2298f6]/5 blur-[120px] animate-pulse" style="animation-delay: 2s;"></div>
+    </div>
     <div
-        class="max-w-[1920px] w-full md:w-[96%] mx-auto relative overflow-hidden flex flex-col md:flex-row min-h-[500px] shadow-[0_20px_50px_rgba(0,0,0,0.1)] bg-white md:rounded-[2.5rem]"
+        class="max-w-[1920px] w-full md:w-[96%] mx-auto relative overflow-hidden flex flex-col md:flex-row min-h-[500px] shadow-[0_30px_60px_-15px_rgba(0,0,0,0.08)] bg-white md:rounded-[3rem] border border-slate-100 reveal-on-scroll"
     >
         <!-- Right Side Image (Background element underneath the blue shape on desktop) -->
         <div
-            class="md:absolute right-0 top-0 w-full md:w-[45%] lg:w-[40%] h-[350px] md:h-full z-0 order-2 md:order-1 flex items-center justify-center p-8 lg:p-12 xl:p-16 bg-white"
+            class="md:absolute right-0 top-0 w-full md:w-[50%] lg:w-[50%] h-[350px] md:h-full z-0 order-2 md:order-1 flex items-center justify-center p-6 lg:p-8 bg-white"
         >
             <img
                 src={cdLogo.src}
                 alt="Centro de Diagnóstico"
-                class="w-full max-w-md h-auto object-contain drop-shadow-sm"
+                class="w-full max-w-[550px] lg:max-w-[650px] h-auto object-contain drop-shadow-xl float-animation"
             />
         </div>
 
-        <!-- Left Side Blue Panel overlaying the image -->
+        <!-- Left Side White Panel -->
         <div
-            class="relative md:absolute left-0 top-0 w-full md:w-[55%] lg:w-[60%] h-full z-10 flex flex-col justify-center overflow-hidden bg-[#598ab1] order-1 md:order-2"
+            class="relative md:absolute left-0 top-0 w-full md:w-[50%] lg:w-[50%] h-full z-10 flex flex-col justify-center overflow-hidden bg-white/80 backdrop-blur-sm order-1 md:order-2"
         >
-            <!-- Decorative Rings inside the blue panel -->
-            <div
-                class="absolute top-[50%] md:top-[60%] left-[20%] md:left-[-10%] lg:left-[5%] -translate-x-1/2 md:translate-x-0 -translate-y-1/2 w-[800px] h-[800px] rounded-full border-[60px] border-white/5 opacity-50 pointer-events-none mix-blend-overlay"
-            >
-            </div>
-            <div
-                class="absolute top-[50%] md:top-[60%] left-[20%] md:left-[-10%] lg:left-[15%] -translate-x-1/2 md:translate-x-0 -translate-y-1/2 w-[1200px] h-[1200px] rounded-full border-[80px] border-white/5 opacity-50 pointer-events-none mix-blend-overlay"
-            >
-            </div>
 
-            <!-- SVG Curve at the right boundary to overlap the image -->
-            <svg
-                class="hidden md:block absolute right-[-1px] top-0 h-full w-24 lg:w-32 translate-x-[99%] text-[#598ab1]"
-                preserveAspectRatio="none"
-                viewBox="0 0 100 100"
-                fill="currentColor"
-            >
-                <path d="M0,0 C100,50 100,50 0,100" stroke="none"></path>
-            </svg>
+
+
 
             <!-- Content - Old Copy Restored -->
             <div
-                class="relative z-20 w-full p-8 md:p-12 lg:p-16 xl:p-24 flex flex-col justify-center max-w-4xl"
+                class="relative z-20 w-full p-8 md:p-12 lg:p-16 flex flex-col justify-center max-w-2xl"
             >
                 <div
-                    class="inline-flex py-1 px-4 rounded-full bg-[#0b1021]/30 text-white text-sm font-semibold mb-6 shadow-sm w-fit border border-white/20 backdrop-blur-sm"
+                    class="inline-flex py-1 px-4 rounded-full bg-[#2298f6]/10 text-[#2298f6] text-sm font-semibold mb-6 shadow-sm w-fit border border-[#2298f6]/20"
                 >
                     Exames Sem Sair do Hospital
                 </div>
 
                 <h2
-                    class="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6 leading-tight"
+                    class="text-3xl md:text-4xl lg:text-5xl font-bold text-[#00a3e0] mb-4 leading-[1.1]"
                 >
                     Diagnóstico Ágil <br /> e Altamente Preciso
                 </h2>
 
                 <p
-                    class="text-white/90 text-lg md:text-xl lg:text-2xl mb-10 font-light leading-relaxed"
+                    class="text-slate-600 text-lg md:text-xl lg:text-2xl mb-6 font-light leading-snug"
                 >
-                    Em parceria com o <strong class="font-semibold text-white"
+                    Em parceria com o <strong class="font-semibold text-[#00a3e0]"
                         >Centro de Diagnóstico</strong
                     > – Apoiado pela excelência Einstein. Tudo que você precisa para
                     sua cirurgia ou consulta no mesmo lugar.
@@ -92,4 +81,42 @@ import cdLogo from "../assets/cd-logo.png";
             </div>
         </div>
     </div>
+
+    <style>
+        .reveal-on-scroll {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+        }
+
+        .reveal-on-scroll.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .float-animation {
+            animation: float 6s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+    </style>
+
+    <script>
+        const observerOptions = {
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.reveal-on-scroll').forEach(el => observer.observe(el));
+    </script>
 </section>
